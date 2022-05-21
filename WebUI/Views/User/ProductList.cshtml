@@ -1,0 +1,56 @@
+﻿@using WebUI.ViewModels
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model ProductWithProductPropertyVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Products";
+}
+<h1>Product List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product.Brand.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductProperty.ProductPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductProperty.ProductDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductProperty.ProductSize)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product.Brand.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductProperty.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductProperty.ProductDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPropertyl.ProductSize)
+            </td>           
+        </tr>
+        }
+    </tbody>
+</table>
